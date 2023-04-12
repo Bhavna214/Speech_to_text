@@ -1,11 +1,9 @@
-var arr = []
+var arr = [2,3,5,8,4,7,1,6]
 var i = 0;
-while(arr.length < 8){
-    var r = Math.floor(Math.random() * 8) + 1;
-    if(arr.indexOf(r) === -1) arr.push(r);
-}
-
-console.log(arr)
+// while(arr.length < 8){
+//     var r = Math.floor(Math.random() * 8) + 1;
+//     if(arr.indexOf(r) === -1) arr.push(r);
+// }
 
 function dexter_voice(lang, translatedText){
     let utterance;
@@ -15,11 +13,12 @@ function dexter_voice(lang, translatedText){
 }
 
 function planetDes(){
-    var speech="mercury";
+    var speech="venus";
     let text = document.getElementById("instruction").innerText;
     dexter_voice("en", text)
-    while(i<8){
-        if(arr[i]==1){
+    console.log(arr)
+    switch (arr[i]) {
+        case 1:
             text = "Which is the dark grey planet that has wrinkles on it?"
             dexter_voice("en", text);
             if(speech == "mercury"){
@@ -29,9 +28,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==2){
+            break;
+        case 2:
             text = "Which is the yellowish-white planet with few brownish-red spots? These spots signify the volcanic rocks!"
             dexter_voice("en", text)
             if(speech == "venus"){
@@ -41,9 +39,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==3){
+            break;
+        case 3:
             text = "Which planet is A combination of water and land? It is a rocky, terrestrial planet. It has a solid and active surface with mountains, valleys, canyons and plains."
             dexter_voice("en", text)
             if(speech == "earth"){
@@ -53,9 +50,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==4){
+            break;
+        case 4:
             text = "Which is the red planet? It got the colour red because of the rusty iron on its surface."
             dexter_voice("en", text)
             if(speech == "mars"){
@@ -65,9 +61,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==5){
+            break;
+        case 5:
             text = "Which is the largest planet in the solar system? It is a gas giant and its colour changes with storms and wind in the planet's atmosphere."
             dexter_voice("en", text)
             if(speech == "jupiter"){
@@ -77,9 +72,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==6){
+            break;
+        case 6:
             text = "Which is the planet with rings? It has a set of 7 main rings with spaces between them."
             dexter_voice("en", text)
             if(speech == "saturn"){
@@ -89,9 +83,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==7){
+            break;
+        case 7:
             text = "Which is the planet which is blue in colour and has faint rings?"
             dexter_voice("en", text)
             if(speech == "uranus"){
@@ -101,9 +94,8 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
-
-        else if(arr[i]==8){
+            break;
+        case 8:
             text = "Which is the dark, cold and windy planet?<br>(It's colour is dark blue.)"
             dexter_voice("en", text)
             if(speech == "neptune"){
@@ -113,8 +105,9 @@ function planetDes(){
                     i = i+1;
                 }
             }
-        }
+            break;
+        default:
+            break;
     }
 }
-
 planetDes();
