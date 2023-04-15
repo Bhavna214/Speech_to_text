@@ -9,34 +9,46 @@ body {
     display: flex;
   }
 
-  .planets-list{
-    display:flex;
+  .model{
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    border: 3px solid white;
-    padding: 1.5rem;
-    width: 10%;
-    min-height: fit-content;
+    float: center;
+    width: 100%;
+    top: 10rem;
   }
 
-  .planets-list .list1{
-    padding: 1rem;
+  .droppable{
+    position: relative;
+    margin: auto;
+    margin-top: -1rem;
+    top: 0;   left: 0;   right: 0;   bottom: 0;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 2px white solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+} 
+  .planet{
+    height: 3.5rem;
+    width: 3.5rem;
+    display: none;
   }
 
-  .model{
-    width: 60%;
-  }
-  
-  .object {
-    border-radius: 50%;
+  .sun {
     position: absolute;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: translateY( 50vmin );
+    animation: ccircle 20s infinite linear;
+    height: 12vmin;
+    width: 12vmin;
   }
 
   .character{
@@ -56,132 +68,64 @@ body {
     height: 30%;
   }
   
-  .p-orbit, #m-orbit{
-    border: 1px solid white;
+  .p-orbit{
+    border: 0.22vmin dashed white;
     opacity: 1;
     background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   
   #belt {
-    height: 97vmin;
-    width: 97vmin;
-    animation: spin 50s infinite linear;
+    height: 90vmin;
+    width: 90vmin;
+    animation: ccircle 50s infinite linear;
     margin-top: 50vmin;
-  }
-  
-  @keyframes spin{
-    0%{ transform: rotate(0deg) }
-    100%{ transform: rotate(360deg) }
-  }
-  
-  #m-orbit {
-    height: 8vmin;
-    width: 8vmin;
-    display: none;
-  }
-  
-  .planet, #moon {
-    z-index: 100;
-  }
-  
-  #sun {
-    height: 12vmin;
-    width: 12vmin;
-  }
-  
-  #moon {
-    height: 1vmin;
-    width: 1vmin;
-    background-color: white;
-    display: none;
-  }
-  
-  #mercury{
-    height: 2vmin;
-    width: 2vmin;
-    display: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }  
+  /* .mercury-revolve,.venus-revolve,.earth-revolve,.mars-revolve,.jupiter-revolve,
+.saturn-revolve,.uranus-revolve,.neptune-revolve{
+  border: 0.22vmin dashed rgba(128, 128, 126, 0.984);
+  opacity: 1;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} */
+
+  /* .venus-revolve{
+    opacity: 1;
+    animation: ccircle 5s infinite linear;
+  } */
+
+  @keyframes circle {
+    from {
+      -webkit-transform: rotateZ(0deg)
+    }
+    to {
+      -webkit-transform: rotateZ(360deg)
+    }
   }
 
-  #mercury1{
-    height: 2vmin;
-    width: 2vmin;
-  }
-  
-  #venus{
-    height: 3vmin;
-    width: 3vmin;
-    display: none;
-  }
-
-  #venus1{
-    height: 3vmin;
-    width: 3vmin;
-  }
-  
-  #earth {
-    height: 4vmin;
-    width: 4vmin;
-    display: none;
-  }
-
-  #earth1 {
-    height: 4vmin;
-    width: 4vmin;
-  }
-  
-  #mars{
-    height: 3.5vmin;
-    width: 3.5vmin;
-    display: none;
-  }
-
-  #mars1{
-    height: 3.5vmin;
-    width: 3.5vmin;
-  }
-  
-  #jupiter{
-    height: 12vmin;
-    width: 12vmin;
-    display: none;
-  }
-
-  #jupiter1{
-    height: 12vmin;
-    width: 12vmin;
-  }
-  
-  #saturn{
-    height: 12vmin;
-    width: 12vmin;
-    border-radius: 0%;
-    display: none;
-  }
-
-  #saturn1{
-    height: 12vmin;
-    width: 12vmin;
-    border-radius: 0%;
-  }
-  
-  #uranus{
-    height: 5vmin;
-    width: 5vmin;
-    display: none;
-  }
-
-  #uranus1{
-    height: 5vmin;
-    width: 5vmin;
-  }
-  
-  #neptune{
-    height: 4vmin;
-    width: 4vmin;
-    display: none;
-  }
-
-  #neptune1{
-    height: 4vmin;
-    width: 4vmin;
-  }
+@keyframes ccircle {
+from {
+    -webkit-transform: rotateZ(360deg)
+}
+to {
+    -webkit-transform: rotateZ(0deg)
+}
+}

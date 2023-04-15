@@ -117,5 +117,5 @@ function planetDes(){
     } while (j <= 8);
     
 }
-dexter_voice("en", " ");
+// dexter_voice("en", " ");
 planetDes();
